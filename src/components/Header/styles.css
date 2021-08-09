@@ -1,0 +1,115 @@
+.header {
+    background-color: var(--midnight-green);
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.navbar-nav {
+    width: 100%;
+}
+
+.navbar-collapse {
+    background: var(--midnight-green);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 9vh 5% 0 5%;
+    position: absolute;
+    transition: right 400ms ease-in;
+    top: -2vh;
+    right: -93vw;
+    width: 72vw;
+}
+
+.show {
+    right: -6vw;
+}
+
+.navbar-brand {
+    height: 40px;
+}
+
+.nav-link {
+    font-size: 1rem !important;
+}
+
+.header__division {
+    margin-top: 3rem;
+}
+
+.nav-link--contact {
+    padding: .7rem 35% !important;
+}
+
+.navbar__toggle {
+    border: none !important;
+    outline: none !important;
+}
+
+.navbar-toggler:focus {
+    text-decoration: none;
+    outline: none !important;
+    box-shadow: none;
+}
+
+.header__menu-button .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+.header__close-button .navbar-toggler-icon {
+    background-image: url('../../assets/icons/icon-close.svg') !important;
+    height: 1em;
+    width: 1em;
+}
+
+@media screen and (min-width: 576px) {
+    .navbar-collapse {
+        background: var(--midnight-green);
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        margin-left: 5%;
+        padding: 0;
+        position: relative;
+        top: 0;
+        right: 0;
+        width: auto;
+    }
+
+    .header__division {
+        margin-top: 0;
+    }
+
+    .nav-link--contact {
+        padding: .4rem 2.8rem !important;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .header {
+        background-color: var(--midnight-green);
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+    }
+    
+    .navbar-nav {
+        width: 100%;
+    }
+    
+    .navbar-collapse {
+        margin-left: 5%;
+    }
+    
+    .nav-brand {
+        height: 38px;
+    }
+    
+    .nav-link {
+        color: var(--white) !important;
+    }
+    
+    .nav-link--contact {
+        padding: .4rem 3rem !important;
+    }
+    
+}

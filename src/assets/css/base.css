@@ -1,0 +1,20 @@
+* {
+    font-family: 'Livvic', sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --rapture-blue: #79C8C7;
+    --dark-green: #012F34;
+    --deep-jungle-green: #004047;
+    --light-coral: #F67E7E;
+    --midnight-green: #014E56;
+    --police-blue: #2C6269;
+    --sacramento-state-green: #012F34;
+    --white: #FFF;
+}
+
+
+body {
+    overflow: hidden;
+}
