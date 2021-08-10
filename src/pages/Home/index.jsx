@@ -1,8 +1,9 @@
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import Header from "../../components/Header";
 import { H1, H2 } from "../../components/Heading";
 import P from "../../components/P";
 import ServicesCard from "../../components/ServicesCard";
+import TestimonialCard from "../../components/TestimonialCard";
 import './styles.css'
 
 const Home = () => {
@@ -39,6 +40,39 @@ const Home = () => {
                             description="Our customized platform with in-built analytics helps you manage your distributed teams." 
                         />
                     </Container>
+                </Container>
+                <Container as="section" fluid className="testimonials bg-no-repeat px pe-4">
+                    <H2 className="testimonials__title">
+                        Delivering real results for top companies. Some of our <b className="testimonials__title--highlight">
+                        success stories</b>.
+                    </H2>
+                    <Row className="mt-5">
+                        <Col xs={12} md={4}>
+                            <TestimonialCard
+                                quote=" “The team perfectly fit the specialized skill set required. They focused on the most essential features helping us launch the platform eight months faster than planned.”"
+                                name="Kady Baker"
+                                role="Product Manager at Bookmark"
+                                index={0}
+                            />
+                        </Col>
+                        <Col xs={12} md={4}>
+                            <TestimonialCard
+                                quote="“We needed to automate our entire onboarding process. The team came in and built out the whole journey. Since going live, user retention has gone through the roof!“"
+                                name="Aiysha Reese"
+                                role="Founder of Manage"
+                                index={1}
+                            />
+                            
+                        </Col>
+                        <Col xs={12} md={4}>
+                            <TestimonialCard
+                                quote="“Amazing. Our team helped us build an app that delivered a new experience for hiring a physio. The launch was an instant success with 100k downloads in the first month.”"
+                                name="Arthur Clarke"
+                                role="Co-founder of MyPhysio"
+                                index={2}
+                            />
+                        </Col>
+                    </Row>
                 </Container>
             </Container>
         </>

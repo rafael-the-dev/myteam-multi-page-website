@@ -1,0 +1,56 @@
+.testimonial-card {
+    background-image: url('../../assets/icons/icon-quotes.svg');
+    background-position: center top;
+    background-size: 60px;
+    padding-top: 2.2rem;
+}
+
+.testimonial-card__quote {
+    opacity: .9;
+}
+
+.testimonial-card__author {
+    display: block;
+    margin-top: 1.4rem;
+}
+
+.testimonial-card__author--name {
+    color: var(--rapture-blue) !important;
+    font-size: 1.4rem;
+}
+
+.testimonial-card__author--role {
+    opacity: .8;
+}
+
+.testimonial-card__author::after {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 3px solid var(--rapture-blue);
+    border-radius: 50%;
+    content: '';
+    display: block;
+    height: 60px;
+    margin: 1.3rem auto 0 auto;
+    width: 60px;
+}
+
+.testimonial-card__author--kady::after {
+    background-image: url('../../assets/images/avatar-kady.jpg');
+
+}
+
+.testimonial-card__author--aiysha::after {
+    background-image: url('../../assets/images/avatar-aiysha.jpg');
+}
+
+.testimonial-card__author--arthur::after {
+    background-image: url('../../assets/images/avatar-arthur.jpg');
+}
+
+@media screen and (min-width: 768px) {
+    .testimonial-card {
+        margin-bottom: 0 !important;
+    }
+}
