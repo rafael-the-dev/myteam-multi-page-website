@@ -1,5 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import ContactBanner from "../../components/ContactBanner";
+import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import { H1, H2 } from "../../components/Heading";
 import P from "../../components/P";
@@ -77,6 +78,7 @@ const Home = () => {
                 </Container>
                 <ContactBanner />
             </Container>
+            <Footer />
         </>
     );
 };

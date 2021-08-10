@@ -1,0 +1,41 @@
+.footer {
+    background-color: var(--dark-green);
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
+
+.footer__logo-container {
+    height: 24px;
+}
+
+.footer__list {
+    list-style: none;
+}
+
+.footer__address {
+    font-size: .95rem;
+    line-height: 1.7rem;
+    opacity: .8;
+}
+
+.footer__social-media {
+    height: 25px;
+    width: 25px;
+}
+
+.footer__copuright {
+    opacity: .8;
+}
+
+@media screen and (min-width: 768px) {
+    .footer__address {
+        margin-left: 5%;
+        width: 47%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .footer__address {
+        margin-left: 8%;
+    }
+}
