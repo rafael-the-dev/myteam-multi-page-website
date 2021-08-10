@@ -1,8 +1,8 @@
 import './styles.css'
 
-const P = ({ children }) => {
+const P = ({ children, className }) => {
     return (
-        <p className="">{ children }</p>
+        <p className={`${className} text-center text-white paragraph`}>{ children }</p>
     );
 };
 

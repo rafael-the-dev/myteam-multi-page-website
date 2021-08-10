@@ -18,3 +18,7 @@
 body {
     overflow: hidden;
 }
+
+main {
+    background-color: var(--midnight-green);
+}
