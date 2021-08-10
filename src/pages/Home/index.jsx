@@ -1,4 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
+import ContactBanner from "../../components/ContactBanner";
 import Header from "../../components/Header";
 import { H1, H2 } from "../../components/Heading";
 import P from "../../components/P";
@@ -41,7 +42,7 @@ const Home = () => {
                         />
                     </Container>
                 </Container>
-                <Container as="section" fluid className="testimonials bg-no-repeat px pe-4">
+                <Container as="section" fluid className="testimonials bg-no-repeat px">
                     <H2 className="testimonials__title">
                         Delivering real results for top companies. Some of our <b className="testimonials__title--highlight">
                         success stories</b>.
@@ -74,6 +75,7 @@ const Home = () => {
                         </Col>
                     </Row>
                 </Container>
+                <ContactBanner />
             </Container>
         </>
     );
