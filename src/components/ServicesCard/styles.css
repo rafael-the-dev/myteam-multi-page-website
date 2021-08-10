@@ -1,0 +1,51 @@
+.services-card__title {
+    color: var(--light-coral) !important;
+}
+
+.services-card__title::before {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: '';
+    display: block;
+    height: 60px;
+    margin: 0 auto 2rem auto;
+    width: 60px;
+}
+
+.services-card:nth-child(1) .services-card__title::before {
+    background-image: url('../../assets/icons/icon-person.svg');
+}
+
+.services-card:nth-child(2) .services-card__title::before {
+    background-image: url('../../assets/icons/icon-cog.svg');
+}
+
+.services-card:nth-child(3) .services-card__title::before {
+    background-image: url('../../assets/icons/icon-chart.svg');
+}
+
+@media screen and (min-width: 576px) {
+    .services-card__description, .services-card__title {
+        margin-left: 15%;
+    }
+
+    .services-card__title::before {
+        margin-left: 0;
+        margin-right: 0;
+        left: 0;
+        height: 50px;
+        position: absolute;
+    }
+    
+}
+
+@media screen and (min-width: 1200px) {
+    .services-card__description, .services-card__title {
+        margin-left: 10%;
+    }
+
+    .services-card__description {
+        width: 54%;
+    }
+}

@@ -15,6 +15,27 @@
     margin-top: 1.7rem;
 }
 
+.services {
+    background-color: var(--sacramento-state-green);
+    background-image: url('../../assets/images/bg-pattern-home-3.svg');
+    background-position: right -74px top 0;
+    background-size: 166px;
+}
+
+.services__title {
+    text-align: left !important;
+    width: 60%;
+}
+
+.services__title::before {
+    background-color: var(--light-coral);
+    content: '';
+    display: block;
+    height: 3px;
+    margin-bottom: 1.8rem;
+    width: 37px;
+}
+
 @media screen and (min-width: 490px) {
     .home-hero {
         background-size: 86% 80px;
@@ -78,6 +99,25 @@
         margin-bottom: 2rem;
         width: 42px;
     }
+
+    .services {
+        background-position: right -74px bottom 0;
+        padding-bottom: 5rem !important;
+    }
+
+    .services__title {
+        font-size: 1.75rem;
+        text-align: left !important;
+        width: 29%;
+    }
+
+    .services__cards-container {
+        width: 60%;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
 
 @media screen and (min-width: 992px) {
@@ -98,6 +138,19 @@
 
     .home-hero__title {
         font-size: 4.2rem;
+    }
+
+    .services {
+        padding-bottom: 1rem !important;
+    }
+
+    .services__title {
+        font-size: 2rem;
+        width: 26%;
+    }
+
+    .services__cards-container {
+        margin-left: 25%;
     }
 }
 
