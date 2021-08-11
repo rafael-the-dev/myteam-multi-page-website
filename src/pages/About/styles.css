@@ -1,0 +1,39 @@
+.about-hero {
+    background-image: url('../../assets/images/bg-pattern-about-1-mobile-nav-1.svg');
+    background-position: right -68px bottom -65px;
+    background-size: 140px;
+    padding-bottom: 6rem;
+}
+
+@media screen and (min-width: 576px) {
+    .about-hero__description {
+        width: 80%;
+    }
+
+    .about-hero__description::before {
+        background-color: var(--light-coral);
+        content: '';
+        display: block;
+        height: 3px;
+        margin-bottom: 1.3rem;
+        width: 30px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .about-hero__description {
+        margin-left: 20%;
+        padding-top: 2rem;
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .about-hero {
+        background-position: right -72px bottom 1px;
+    }
+    
+    .about-hero__description {
+        padding-top: 4rem;
+    }
+}

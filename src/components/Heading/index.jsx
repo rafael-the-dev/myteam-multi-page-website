@@ -2,7 +2,7 @@ import './styles.css';
 
 const H1 = ({ children, className }) => {
     return (
-        <h1 className={`font-weight-6 text-center text-white h1 ${className}`}>{ children }</h1>
+        <h1 className={`font-weight-7 text-center text-white h1 ${className}`}>{ children }</h1>
     );
 };
 
