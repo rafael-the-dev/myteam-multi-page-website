@@ -1,0 +1,82 @@
+
+.contact {
+    padding-bottom: 4rem;
+}
+
+.contact__title {
+    font-size: 2.6rem;
+}
+
+.contact__subtitle {
+    color: var(--light-coral) !important;
+    font-size: 2.4;
+}
+
+.contact__item {
+    height: auto;
+}
+
+.contact__item::before {
+    background-image: url('../../assets/icons/icon-chart.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    content: '';
+    height: 60px;
+    margin-right: 1.2rem;
+    width: 60px;
+}
+
+.contact__item:nth-child(1):before {
+    background-image: url('../../assets/icons/icon-person.svg');
+}
+
+.contact__item:nth-child(2):before {
+    background-image: url('../../assets/icons/icon-cog.svg');
+}
+
+.contact__item:nth-child(3):before {
+    background-image: url('../../assets/icons/icon-chart.svg');
+}
+
+.form-control, .form-floating>label {
+    color: var(--white);
+}
+
+.form-control {
+    border: none;
+    border-bottom: 1px solid var(--white);
+    box-shadow: none !important;
+    
+    outline: none !important;
+}
+
+.form-control:focus {
+    color: var(--white);
+}
+
+.form__submit {
+    color: var(--deep-jungle-green);
+    padding: .375rem 1.5rem;
+}
+
+.form__submit:hover {
+    background-color: var(--sacramento-state-green) !important;
+    color: var(--white) !important;
+}
+
+@media screen and (min-width: 576px) {
+    .contact {
+        background-image: url('../../assets/images/bg-pattern-about-2-contact-1.svg'), url('../../assets/images/bg-pattern-contact-2.svg');
+        background-size: 120px, 120px;
+        background-position: left -60px top 40px, right -60px bottom;
+        min-height: 75vh;
+        padding-bottom: 6rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .contact {
+        padding-bottom: 3rem;
+    }
+}

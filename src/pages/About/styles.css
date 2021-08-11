@@ -27,7 +27,7 @@
     font-weight: 700;
 }
 
-.list-group-item  {
+.clients-section__item  {
     height: 40px;
 }
 
@@ -49,11 +49,11 @@
         background-position: left top -58px;
     }
 
-    .list-group {
+    .clients-section__list {
         padding-left: 10%;;
     }
 
-    .list-group-item {
+    .clients-section__item {
         height: 35px;
         width: 25%;
     }

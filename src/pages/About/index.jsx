@@ -6,11 +6,6 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import './styles.css';
 import PersonalCard from "../../components/PersonalCard";
-/*import theVerge from '../../assets/images/logo-the-verge.png';
-import theVerge from '../../assets/images/logo-the-verge.png';
-import theVerge from '../../assets/images/logo-the-verge.png';
-import theVerge from '../../assets/images/logo-the-verge.png';
-import theVerge from '../../assets/images/logo-the-verge.png'; */
 
 const About = () => {
     const importImage = name => require(`../../assets/images/${name}`).default;
