@@ -1,0 +1,99 @@
+.personal-card {
+    background-color: var(--sacramento-state-green);
+    padding: 2rem 3%;
+}
+
+.personal-card__name::before {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 3px solid var(--rapture-blue);
+    border-radius: 50%;
+    content: '';
+    display: block;
+    height: 80px;
+    margin: 0 auto 1.3rem auto;
+    width: 80px;
+}
+
+.personal-card__author, .personal-card__name {
+    color: var(--rapture-blue) !important;
+}
+
+.personal-card__name--nikita::before {
+    background-image: url('../../assets/images/avatar-nikita.jpg');
+}
+
+.personal-card__name--cristian::before {
+    background-image: url('../../assets/images/avatar-christian.jpg');
+}
+
+.personal-card__name--cruz::before {
+    background-image: url('../../assets/images/avatar-cruz.jpg');
+}
+
+.personal-card__name--drake::before {
+    background-image: url('../../assets/images/avatar-drake.jpg');
+}
+
+.personal-card__name--griffin::before {
+    background-image: url('../../assets/images/avatar-griffin.jpg');
+}
+
+.personal-card__name--aden::before {
+    background-image: url('../../assets/images/avatar-aden.jpg');
+}
+
+.personal-card__body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--sacramento-state-green);
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    padding: 2rem 1rem 0 1rem;
+    transform: scale(0);
+    transition: .3s ease;
+}
+
+.personal-card__body--scale {
+    transform: scale(1);
+}
+
+.personal-card__quote {
+    font-size: .95rem;
+    opacity: .9;
+}
+
+.personal-card__link {
+    height: 24px;
+    width: 40%;
+}
+
+.personal-card__button {
+    background-image: url('../../assets/icons/icon-cross.svg');
+    background-position: center;
+    background-size: 14px;
+    background-color: var(--light-coral);
+    height: 40px;
+    transition: all 400ms;
+    width: 40px;
+}
+
+.personal-card__button:hover {
+    background-color: var(--rapture-blue) !important;
+}
+
+.personal-card__button--background {
+    background-color: var(--rapture-blue) !important;
+    background-image: url('../../assets/icons/icon-close.svg');
+    background-size: 17px;
+}
+
+.btn-check:focus+.btn-primary, .btn-primary:focus {
+    background-color: var(--light-coral);
+    border-color: var(--light-coral);
+    box-shadow: none;
+}

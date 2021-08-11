@@ -5,6 +5,32 @@
     padding-bottom: 6rem;
 }
 
+.directors-section {
+    background-color: var(--deep-jungle-green);
+    background-image: url('../../assets/images/bg-pattern-about-2-contact-1.svg'), url('../../assets/images/bg-pattern-home-4-about-3.svg');
+    background-position: left -59px top -60px, right bottom;
+    background-size: 120px, 100px;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+}
+
+.clients-section {
+    background-image: url('../../assets/images/bg-pattern-about-4.svg');
+    background-position: left -60px top -42px;
+    background-size: 120px;
+    background-color: var(--sacramento-state-green);
+    padding-bottom: 4rem;
+    padding-top: 5rem;
+}
+
+.clients-section {
+    font-weight: 700;
+}
+
+.list-group-item  {
+    height: 40px;
+}
+
 @media screen and (min-width: 576px) {
     .about-hero__description {
         width: 80%;
@@ -17,6 +43,19 @@
         height: 3px;
         margin-bottom: 1.3rem;
         width: 30px;
+    }
+
+    .clients-section {
+        background-position: left top -58px;
+    }
+
+    .list-group {
+        padding-left: 10%;;
+    }
+
+    .list-group-item {
+        height: 35px;
+        width: 25%;
     }
 }
 
@@ -32,8 +71,16 @@
     .about-hero {
         background-position: right -72px bottom 1px;
     }
-    
+
     .about-hero__description {
         padding-top: 4rem;
+    }
+
+    .directors-section {
+        background-position: left -65px top, right bottom;
+    }
+
+    .clients-section {
+        background-position: left top -1px;
     }
 }
