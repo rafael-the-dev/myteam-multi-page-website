@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ContactBanner from "../../components/ContactBanner";
 import Footer from "../../components/Footer";
@@ -11,6 +11,8 @@ import './styles.css';
 import AOS from 'aos';
 
 const Home = () => {
+    const mainRef = useRef(null);
+    
     useEffect(() => {
         window.scrollBy({ 
             top: 100, // could be negative value <div data-aos="fade-up" data-aos-duration="3000"></div>
@@ -18,12 +20,15 @@ const Home = () => {
             behavior: 'smooth' 
         });
         AOS.init();
+        let lastMainRef = mainRef;
+        return () => { lastMainRef.current.classList.remove('menu-opned'); lastMainRef = null };
     }, [ ]);
 
     return (
         <>
-            <Header />
-            <Container as="main" aria-controls="basic-navbar-nav" fluid className="px-0">
+            <Header mainRef={mainRef} key={Math.random() * 900} />
+            <div ref={mainRef} key={Math.random()}>
+            <Container as="main" fluid className="px-0">
                 <Container as="section" fluid className="bg-no-repeat bg-contain px d-md-flex align-items-md-center home-hero"
                     data-aos="fade-up" data-aos-duration="3000">
                     <H1 className="home-hero__title d-md-inline-block text-md-start">
@@ -91,6 +96,7 @@ const Home = () => {
                 <ContactBanner />
             </Container>
             <Footer />
+            </div>
         </>
     );
 };

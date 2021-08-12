@@ -11,6 +11,21 @@
     padding-right: 5%;
 }
 
+.menu-opened, .menu-opened::before {
+    background-color: #000;
+    opacity: .6;
+}
+
+.menu-opened::before {
+    content: '';
+    display: block;
+    height: 100px;
+    left: 0;
+    position: absolute;
+    top: -12px;
+    width: 100%;
+}
+
 @media screen and (min-width: 576px) {
     .px {
         padding-left: 5%;

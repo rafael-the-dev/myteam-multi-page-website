@@ -6,8 +6,7 @@ import { H1, H2 } from "../../components/Heading";
 import { useForm } from "react-hook-form";
 import Mailcheck from "../../assets/js/mailcheck";
 import { useHistory } from 'react-router-dom';
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import AOS from 'aos';
 
 const Contact = () => {
@@ -44,7 +43,9 @@ const Contact = () => {
         setValue('email', emailSuggestions, { shouldValidate: true });
         clearErrors('email');
         setEmailSuggestions(e => '');
-    }
+    };
+
+    const mainRef = useRef(null);
 
     useEffect(() => {
         window.scrollBy({ 
@@ -53,11 +54,14 @@ const Contact = () => {
             behavior: 'smooth' 
           });
           AOS.init();
-    }, []);
+          let lastMainRef = mainRef;
+          return () => { lastMainRef.current.classList.remove('menu-opned'); lastMainRef = null };
+    }, [ ]);
 
     return (
         <>
-            <Header />
+            <Header mainRef={mainRef} key={Math.random() * 200} />
+            <div ref={mainRef} key={Math.random() * 20}>
             <Container as="main" fluid className="px-0">
                 <Container as="section" fluid className="px d-flex align-items-center bg-no-repeat contact" 
                     data-aos="fade-up" data-aos-duration="3000">
@@ -156,6 +160,7 @@ const Contact = () => {
                 </Container>
             </Container>
             <Footer />
+            </div>
         </>
     );
 };

@@ -9,7 +9,11 @@
 }
 
 .navbar-collapse {
-    background: var(--midnight-green);
+    background-color: var(--midnight-green);
+    background-image: url('../../assets/images/bg-pattern-about-1-mobile-nav-1.svg');
+    background-position: right -67px bottom;
+    background-size: 150px;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -19,6 +23,7 @@
     top: -2vh;
     right: -93vw;
     width: 72vw;
+    z-index: 10;
 }
 
 .show {
@@ -65,6 +70,7 @@
 @media screen and (min-width: 576px) {
     .navbar-collapse {
         background: var(--midnight-green);
+        background-image: none;
         display: flex;
         flex-direction: row;
         height: auto;

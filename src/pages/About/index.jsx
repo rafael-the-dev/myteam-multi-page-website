@@ -6,11 +6,12 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import './styles.css';
 import PersonalCard from "../../components/PersonalCard";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import AOS from 'aos';
 
 const About = () => {
     const importImage = name => require(`../../assets/images/${name}`).default;
+    const mainRef = useRef(null);
 
     useEffect(() => {
         window.scrollBy({ 
@@ -19,11 +20,14 @@ const About = () => {
             behavior: 'smooth' 
         });
         AOS.init();
+        let lastMainRef = mainRef;
+        return () => { lastMainRef.current.classList.remove('menu-opned'); lastMainRef = null };
     }, []);
 
     return (
         <>
-            <Header />
+            <Header mainRef={mainRef}  key={Math.random() * 600} />
+            <div div ref={mainRef} key={Math.random() * 100}>
             <Container fluid as="main" className="px-0" data-aos="fade-up" data-aos-duration="3000">
                 <Container as="section" fluid className="bg-no-repeat px d-flex flex-column flex-md-row align-items-center about-hero">
                     <H1 className="about-hero__title">About</H1>
@@ -111,6 +115,7 @@ const About = () => {
                 <ContactBanner />
             </Container>
             <Footer />
+            </div>
         </>
     );
 };
