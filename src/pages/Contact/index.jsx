@@ -7,6 +7,8 @@ import { useForm } from "react-hook-form";
 import Mailcheck from "../../assets/js/mailcheck";
 import { useHistory } from 'react-router-dom';
 import { useState } from "react";
+import { useEffect } from "react";
+import AOS from 'aos';
 
 const Contact = () => {
     const { register, handleSubmit, clearErrors, setError, formState: { errors, isValid }, setValue  } = useForm({ mode: 'onBlur', reValidateMode: 'onBlur'});
@@ -44,11 +46,21 @@ const Contact = () => {
         setEmailSuggestions(e => '');
     }
 
+    useEffect(() => {
+        window.scrollBy({ 
+            top: 100, // could be negative value
+            left: 0, 
+            behavior: 'smooth' 
+          });
+          AOS.init();
+    }, []);
+
     return (
         <>
             <Header />
             <Container as="main" fluid className="px-0">
-                <Container as="section" fluid className="px d-flex align-items-center bg-no-repeat contact">
+                <Container as="section" fluid className="px d-flex align-items-center bg-no-repeat contact" 
+                    data-aos="fade-up" data-aos-duration="3000">
                     <Row className="w-100 align-items-md-center">
                         <Col xs={12} md={6} xxl={{ span: 5, offset: 1}}>
                             <H1 className="text-md-start contact__title">Contact</H1>

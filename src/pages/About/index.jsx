@@ -6,13 +6,25 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import './styles.css';
 import PersonalCard from "../../components/PersonalCard";
+import { useEffect } from "react";
+import AOS from 'aos';
 
 const About = () => {
     const importImage = name => require(`../../assets/images/${name}`).default;
+
+    useEffect(() => {
+        window.scrollBy({ 
+            top: 100, // could be negative value
+            left: 0, 
+            behavior: 'smooth' 
+        });
+        AOS.init();
+    }, []);
+
     return (
         <>
             <Header />
-            <Container fluid as="main" className="px-0">
+            <Container fluid as="main" className="px-0" data-aos="fade-up" data-aos-duration="3000">
                 <Container as="section" fluid className="bg-no-repeat px d-flex flex-column flex-md-row align-items-center about-hero">
                     <H1 className="about-hero__title">About</H1>
                     <P  className="mt-4 text-md-start about-hero__description">
@@ -22,7 +34,7 @@ const About = () => {
                         experiences. We’ll bring those teams to you.
                     </P>
                 </Container>
-                <Container as="section" fluid className="px bg-no-repeat directors-section">
+                <Container as="section" fluid className="px bg-no-repeat directors-section" data-aos="fade-up" data-aos-duration="3000">
                     <H2 className="directors-section__title">Meet the directors</H2>
                     <Row className="mt-5">
                         <Col xs={12} sm={6} md={4}>
@@ -75,7 +87,7 @@ const About = () => {
                         </Col>
                     </Row>
                 </Container>
-                <Container as="section" fluid className="px bg-no-repeat clients-section">
+                <Container as="section" fluid className="px bg-no-repeat clients-section" data-aos="fade-up" data-aos-duration="3000">
                     <H2 className="clients-section__title">Some of our clients</H2>
                     <ListGroup as="ul" className="d-flex mt-5 flex-column align-items-center justify-content-between w-100 
                         flex-sm-row clients-section__list">
