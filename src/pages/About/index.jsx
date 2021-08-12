@@ -15,7 +15,7 @@ const About = () => {
 
     useEffect(() => {
         window.scrollBy({ 
-            top: 100, // could be negative value
+            top: 0, // could be negative value
             left: 0, 
             behavior: 'smooth' 
         });

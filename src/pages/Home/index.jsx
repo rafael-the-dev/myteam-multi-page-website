@@ -15,7 +15,7 @@ const Home = () => {
     
     useEffect(() => {
         window.scrollBy({ 
-            top: 100, // could be negative value <div data-aos="fade-up" data-aos-duration="3000"></div>
+            top: 0, // could be negative value <div data-aos="fade-up" data-aos-duration="3000"></div>
             left: 0, 
             behavior: 'smooth' 
         });
