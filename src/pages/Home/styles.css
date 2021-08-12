@@ -85,21 +85,10 @@
 
 @media screen and (min-width: 768px) {
     .home-hero {
-        background-position: 55vw bottom;
-        background-size: 31% 64px;
+        background-image: url('../../assets/images/bg-pattern-home-1.svg'), url('../../assets/images/bg-pattern-home-2.svg');
+        background-position: left -67px center, right 16% bottom;
+        background-size: 130px, 31% 64px;
         padding-top: 4rem;
-    }
-
-    .home-hero::before {
-        background-image: url('../../assets/images/bg-pattern-home-1.svg');
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-        content: '';
-        display: block;
-        height: 129px;
-        left: -95px;
-        position: absolute;
-        width: 15%;
     }
 
     .home-hero__title {
@@ -159,12 +148,7 @@
 
 @media screen and (min-width: 1200px) {
     .home-hero {
-        background-size: 27% 64px;
-    }
-
-    .home-hero::before {
-        background-size: 100% 96%;
-        left: -113px;
+        background-size: 140px, 27% 64px;
     }
 
     .home-hero__title {
@@ -191,16 +175,10 @@
 
 @media screen and (min-width: 1400px) {
     .home-hero {
-        background-position: 59vw bottom;
-        background-size: 20% 71px;
+        background-position: left -67px center, right 13% bottom;
+        background-size: 140px, 20% 71px;
         padding-bottom: 12rem;
         padding-top: 6rem;
-    }
-
-    .home-hero::before {
-        height: 135px;
-        left: -6vw;
-        width: 10%;
     }
 
     .home-hero__title {
