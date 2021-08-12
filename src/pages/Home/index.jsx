@@ -37,7 +37,7 @@ const Home = () => {
                 <Container as="section" fluid className="services bg-no-repeat bg-contain px py-5 d-md-flex align-items-md-start 
                 justify-content-md-between" data-aos="fade-up" data-aos-duration="3000">
                     <H2 className="services__title">
-                        Build & manage distributed teams like no one else.
+                        Build &amp; manage distributed teams like no one else.
                     </H2>
                     <Container fluid className="mt-5 mt-md-0 services__cards-container">
                         <ServicesCard
