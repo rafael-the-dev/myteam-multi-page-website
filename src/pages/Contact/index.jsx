@@ -3,14 +3,53 @@ import Header from "../../components/Header";
 import { Container, Row, Col, ListGroup, Form, Button, FloatingLabel} from "react-bootstrap";
 import './styles.css'
 import { H1, H2 } from "../../components/Heading";
+import { useForm } from "react-hook-form";
+import Mailcheck from "../../assets/js/mailcheck";
+import { useHistory } from 'react-router-dom';
+import { useState } from "react";
 
 const Contact = () => {
+    const { register, handleSubmit, clearErrors, setError, formState: { errors, isValid }, setValue  } = useForm({ mode: 'onBlur', reValidateMode: 'onBlur'});
+
+    const history = useHistory()
+
+    
+    const onSubmit = (data, e) => { if(isValid){history.push('/')} };
+    const onError = (errors, e) => console.log("error ", errors, e);
+    const requiredMessage = 'This field is required';
+
+
+    const [ emailSuggestions, setEmailSuggestions ] = useState('');
+
+    const domains = ['gmail.com', 'aol.com', 'hotmail.com', 'yahoo.com', 'outlook.com', 'live.com', 'msn.com'];
+    //const secondLevelDomains = ['hotmail']
+    const topLevelDomains = ["com", "net", "org"];
+    const checkEmail = event => {
+        Mailcheck.run({
+            email: event.target.value,
+            domains: domains,                       // optional
+            topLevelDomains: topLevelDomains,       // optional
+            //secondLevelDomains: secondLevelDomains, // optional
+            suggested: function(suggestion) {
+              setEmailSuggestions(e => suggestion.full);
+              
+              setError('email', { type: 'pattern', message: 'Invalid email address'})
+            }
+        });
+    };
+
+    const labelClickHandler = () => {
+        setValue('email', emailSuggestions, { shouldValidate: true });
+        clearErrors('email');
+        setEmailSuggestions(e => '');
+    }
+
     return (
         <>
             <Header />
             <Container as="main" fluid className="px-0">
                 <Container as="section" fluid className="px d-flex align-items-center bg-no-repeat contact">
-                    <Row className="w-100">
+                    <Row className="w-100 align-items-md-center">
                         <Col xs={12} md={6} xxl={{ span: 5, offset: 1}}>
                             <H1 className="text-md-start contact__title">Contact</H1>
                             <H2 className="text-md-start mt-3 contact__subtitle">Ask us about</H2>
@@ -31,43 +70,72 @@ const Contact = () => {
                             </ListGroup>
                         </Col>
                         <Col xs={12} md={6} xxl={5}>
-                            <Form>
+                            <Form onSubmit={handleSubmit(onSubmit, onError)} autocomplete="off">
                                 <FloatingLabel
                                     controlId="floatingInput"
                                     label="Name"
                                     className="mb-3"
                                     >
-                                    <Form.Control type="email" placeholder="name@example.com" className="bg-transparent" />
+                                    <Form.Control
+                                        {...register("name", { required: requiredMessage })} 
+                                        type="text" 
+                                        className="bg-transparent" 
+                                    />
                                 </FloatingLabel>
+                                { errors.name?.type === 'required' && <label className="error__message">{ requiredMessage }</label> }
                                 <FloatingLabel
                                     controlId="floatingInput"
                                     label="Email address"
                                     className="mb-3"
                                     >
-                                    <Form.Control type="email" placeholder="name@example.com" className="bg-transparent" />
+                                    <Form.Control
+                                        type="email" 
+                                        className="bg-transparent" 
+                                        {...register('email', { required: requiredMessage, pattern: /[a-zA-z0-9]{2,30}@[a-zA-z]{3,15}\.com?(\.[a-z]{2})?/ }) }
+                                        onBlur={checkEmail}
+                                    />
                                 </FloatingLabel>
+                                { errors.email?.type === 'required' && <label className="error__message">{ requiredMessage }</label> }
+                                { errors.email?.type === 'pattern' && <label className="error__message">Please use a valid email address</label> }
+                                { emailSuggestions ? (
+                                    <label className="email-suggestion"  onClick={labelClickHandler}>
+                                        Do you mean <em className="email-suggestion--highlight">{emailSuggestions}</em>
+                                    </label>) : ''}
                                 <FloatingLabel
                                     controlId="floatingInput"
                                     label="Company Name"
                                     className="mb-3"
                                     >
-                                    <Form.Control type="email" placeholder="name@example.com" className="bg-transparent" />
+                                    <Form.Control
+                                        type="text" 
+                                        className="bg-transparent" 
+                                    />
                                 </FloatingLabel>
                                 <FloatingLabel
                                     controlId="floatingInput"
                                     label="Title"
                                     className="mb-3"
                                     >
-                                    <Form.Control type="email" placeholder="name@example.com" className="bg-transparent" />
+                                    <Form.Control 
+                                        type="text" 
+                                        placeholder="name@example.com" 
+                                        className="bg-transparent" 
+                                    />
                                 </FloatingLabel>
                                 <FloatingLabel
                                     controlId="floatingInput"
                                     label="Message"
                                     className="mb-3"
                                     >
-                                    <Form.Control as="textarea" className="bg-transparent" style={{ height: '80px' }} />
+                                    <Form.Control 
+                                        as="textarea" 
+                                        className="bg-transparent" 
+                                        style={{ height: '80px' }} 
+                                        { ...register('message', { required: requiredMessage })}
+                                    />
                                 </FloatingLabel>
-                                <Button className="bg-light rounded-pill border-0 form__submit" type="submit">
+                                { errors.message?.type === 'required' && <label className="error__message">{ requiredMessage }</label>}
+                                <Button className="bg-light mt-3 rounded-pill border-0 form__submit" type="submit">
                                     Submit
                                 </Button>
                             </Form>

@@ -14,10 +14,10 @@ const Header = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Navbar.Toggle aria-controls="basic-navbar-nav" className="align-self-end d-sm-none header__close-button" />
                     <Nav className="me-auto">
-                        <Nav.Link href="#home" className="font-weight-7 text-white">Home</Nav.Link>
-                        <Nav.Link href="#link" className="font-weight-7 text-white">Link</Nav.Link>
+                        <Nav.Link as={Link} to="/" className="font-weight-7 text-white">Home</Nav.Link>
+                        <Nav.Link as={Link} to="/about" className="font-weight-7 text-white">About</Nav.Link>
                         <Container fluid className="justify-content-start justify-content-sm-end d-flex flex-grow-1 header__division">
-                            <Nav.Link href="#link" className="border font-weight-7 text-white text-center rounded-pill nav-link--contact">Link</Nav.Link>
+                            <Nav.Link as={Link} to="/contact" className="border font-weight-7 text-white text-center rounded-pill nav-link--contact">Contact</Nav.Link>
                         </Container>
                     </Nav>
                 </Navbar.Collapse>

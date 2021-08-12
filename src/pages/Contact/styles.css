@@ -47,12 +47,15 @@
     border: none;
     border-bottom: 1px solid var(--white);
     box-shadow: none !important;
-    
     outline: none !important;
 }
 
 .form-control:focus {
     color: var(--white);
+}
+
+.form-control:required {
+    border-bottom: 1px solid var(--light-coral) !important;
 }
 
 .form__submit {
@@ -63,6 +66,21 @@
 .form__submit:hover {
     background-color: var(--sacramento-state-green) !important;
     color: var(--white) !important;
+}
+
+.error__message, .email-suggestion {
+    color: var(--light-coral);
+    display: block;
+    margin-left: 12px;
+}
+
+.error__message:last-child {
+    margin-bottom: 1rem;
+}
+
+.email-suggestion--highlight {
+    color: cyan;
+    text-decoration: underline;
 }
 
 @media screen and (min-width: 576px) {

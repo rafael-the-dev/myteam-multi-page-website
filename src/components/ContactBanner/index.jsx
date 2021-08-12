@@ -10,7 +10,7 @@ const ContactBanner = () => {
             <H2 className="contact-banner__title text-md-start">Ready to get started?</H2>
             <Button
                 as={Link} 
-                to="/"  
+                to="/contact"  
                 className="border font-weight-7 bg-transparent border-2 text-center rounded-pill mt-sm-0 contact-banner__link">
                 Contact us
             </Button>
