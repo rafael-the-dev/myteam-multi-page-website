@@ -21,6 +21,7 @@ html {
 
 
 body {
+    background-color: var(--midnight-green);
     overflow-x: hidden;
 }
 

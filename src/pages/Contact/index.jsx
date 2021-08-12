@@ -54,8 +54,6 @@ const Contact = () => {
             behavior: 'smooth' 
           });
           AOS.init();
-          let lastMainRef = mainRef;
-          return () => { lastMainRef.current.classList.remove('menu-opned'); lastMainRef = null };
     }, [ ]);
 
     return (
