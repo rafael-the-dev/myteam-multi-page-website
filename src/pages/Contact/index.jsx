@@ -82,7 +82,7 @@ const Contact = () => {
                                 </ListGroup.Item>
                             </ListGroup>
                         </Col>
-                        <Col xs={12} md={6} xxl={5}>
+                        <Col xs={12} md={6} xxl={5} className="mt-4 mt-md-0">
                             <Form onSubmit={handleSubmit(onSubmit, onError)} autocomplete="off">
                                 <FloatingLabel
                                     controlId="floatingInput"

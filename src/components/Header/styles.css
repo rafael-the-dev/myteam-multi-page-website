@@ -36,6 +36,12 @@
 
 .nav-link {
     font-size: 1rem !important;
+    transition: all 400ms;
+}
+
+.nav-link:not(.nav-link--contact):hover {
+    font-size: 1.1rem !important;
+    opacity: .8;
 }
 
 .header__division {
@@ -44,6 +50,11 @@
 
 .nav-link--contact {
     padding: .7rem 35% !important;
+}
+
+.nav-link--contact:hover {
+    background-color: var(--white) !important;
+    color: var(--dark-green) !important;
 }
 
 .navbar__toggle {

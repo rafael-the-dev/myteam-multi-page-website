@@ -18,22 +18,23 @@ const Header = ({ mainRef }) => {
         window.addEventListener('resize', event => {
             if(event.target.innerWidth >= 576) {
                 if(isMenuOpened) {
-                    mainRef.current.classList.remove('menu-opened');
                     document.querySelector('html').classList.remove('overflow-hidden');
                 }
             } else {
                 if(isMenuOpened) {
-                    mainRef.current.classList.add('menu-opened');
                     document.querySelector('html').classList.add('overflow-hidden');
                 }
             }
         });
+    }, [ isMenuOpened ]);
 
+    useEffect(() => {
         const interval = setTimeout(() => {
             document.querySelector('html').classList.remove('overflow-hidden');
         }, 2000);
+
         return () => clearInterval(interval);
-    }, [ mainRef, isMenuOpened ]);
+    }, [ ])
 
     return (
         <Container as="header" fluid className="px header">

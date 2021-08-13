@@ -31,6 +31,15 @@
         padding-left: 5%;
         padding-right: 5%;
     }
+
+    .menu-opened {
+        background-color: transparent;
+        opacity: 1;
+    }
+
+    .menu-opened::before {
+        display: none;
+    }
 }
 
 @media screen and (min-width: 992px) {
