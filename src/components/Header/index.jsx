@@ -1,36 +1,20 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Container, Navbar, Image, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/icons/logo.svg';
 import './styles.css';
 
 const Header = ({ mainRef }) => {
-    const [ isMenuOpened, setIsMenuOpened ] = useState(false);
     const clickHandler = () => {
         if(mainRef.current) {
             mainRef.current.classList.toggle('menu-opened');
-            document.querySelector('html').classList.toggle('overflow-hidden');
-            setIsMenuOpened(b => !b);
+            document.querySelector('html').classList.toggle('html--overflow');
         }
     };
 
     useEffect(() => {
-        window.addEventListener('resize', event => {
-            if(event.target.innerWidth >= 576) {
-                if(isMenuOpened) {
-                    document.querySelector('html').classList.remove('overflow-hidden');
-                }
-            } else {
-                if(isMenuOpened) {
-                    document.querySelector('html').classList.add('overflow-hidden');
-                }
-            }
-        });
-    }, [ isMenuOpened ]);
-
-    useEffect(() => {
         const interval = setTimeout(() => {
-            document.querySelector('html').classList.remove('overflow-hidden');
+            document.querySelector('html').classList.remove('html--overflow');
         }, 2000);
 
         return () => clearInterval(interval);

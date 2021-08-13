@@ -17,6 +17,17 @@
 html {
     scroll-behavior: smooth;
     max-width: 1920px;
+    overflow-y: scroll;
+}
+
+.html--overflow {
+  overflow-y: hidden;
+}
+
+@media screen  and (min-width: 576px) {
+  .html--overflow {
+    overflow-y: scroll;
+  }
 }
 
 
