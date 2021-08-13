@@ -59,8 +59,7 @@ const Contact = () => {
     return (
         <>
             <Header mainRef={mainRef} key={Math.random() * 200} />
-            <div ref={mainRef} key={Math.random() * 20}>
-            <Container as="main" fluid className="px-0">
+            <Container as="main" ref={mainRef} key={Math.random() * 20} fluid className="px-0">
                 <Container as="section" fluid className="px d-flex align-items-center bg-no-repeat contact" 
                     data-aos="fade-up" data-aos-duration="3000">
                     <Row className="w-100 align-items-md-center">
@@ -158,7 +157,6 @@ const Contact = () => {
                 </Container>
             </Container>
             <Footer />
-            </div>
         </>
     );
 };

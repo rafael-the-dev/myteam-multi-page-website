@@ -28,6 +28,11 @@ const Header = ({ mainRef }) => {
                 }
             }
         });
+
+        const interval = setTimeout(() => {
+            document.querySelector('html').classList.remove('overflow-hidden');
+        }, 2000);
+        return () => clearInterval(interval);
     }, [ mainRef, isMenuOpened ]);
 
     return (

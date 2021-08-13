@@ -25,8 +25,8 @@ const About = () => {
     return (
         <>
             <Header mainRef={mainRef}  key={Math.random() * 600} />
-            <div div ref={mainRef} key={Math.random() * 100}>
-            <Container fluid as="main" className="px-0" data-aos="fade-up" data-aos-duration="3000">
+            <Container fluid as="main" className="px-0" data-aos="fade-up" data-aos-duration="3000"
+                ref={mainRef} key={Math.random() * 100}>
                 <Container as="section" fluid className="bg-no-repeat px d-flex flex-column flex-md-row align-items-center about-hero">
                     <H1 className="about-hero__title">About</H1>
                     <P  className="mt-4 text-md-start about-hero__description">
@@ -113,7 +113,6 @@ const About = () => {
                 <ContactBanner />
             </Container>
             <Footer />
-            </div>
         </>
     );
 };

@@ -25,8 +25,7 @@ const Home = () => {
     return (
         <>
             <Header mainRef={mainRef} key={Math.random() * 900} />
-            <div ref={mainRef} key={Math.random()}>
-            <Container as="main" fluid className="px-0">
+            <Container as="main" fluid className="px-0" ref={mainRef} key={Math.random()} >
                 <Container as="section" fluid className="bg-no-repeat bg-contain px d-md-flex align-items-md-center home-hero"
                     data-aos="fade-up" data-aos-duration="3000">
                     <H1 className="home-hero__title d-md-inline-block text-md-start">
@@ -35,7 +34,8 @@ const Home = () => {
                     <P className="home-hero__description d-md-inline-block text-md-start">
                         Finding the right people and building high performing teams can be hard. 
                         Most companies aren’t tapping into the abundance of global talent. 
-                        We’re about to change that.</P>
+                        We’re about to change that.
+                    </P>
                 </Container>
                 <Container as="section" fluid className="services bg-no-repeat bg-contain px py-5 d-md-flex align-items-md-start 
                 justify-content-md-between" data-aos="fade-up" data-aos-duration="3000">
@@ -94,7 +94,6 @@ const Home = () => {
                 <ContactBanner />
             </Container>
             <Footer />
-            </div>
         </>
     );
 };
