@@ -1,4 +1,4 @@
-/* globals define, module, jQuery */
+/* globals define, jQuery */
 
 /*
  * Mailcheck https://github.com/mailcheck/mailcheck
@@ -63,7 +63,7 @@ var Mailcheck = {
       var closestDomain = this.findClosestDomain(emailParts.domain, domains, distanceFunction, this.domainThreshold);
   
       if (closestDomain) {
-        if (closestDomain == emailParts.domain) {
+        if (closestDomain === emailParts.domain) {
           // The email address exactly matches one of the supplied domains; do not return a suggestion.
           return false;
         } else {
@@ -80,13 +80,13 @@ var Mailcheck = {
         closestDomain = emailParts.domain;
         var rtrn = false;
   
-        if(closestSecondLevelDomain && closestSecondLevelDomain != emailParts.secondLevelDomain) {
+        if(closestSecondLevelDomain && closestSecondLevelDomain !== emailParts.secondLevelDomain) {
           // The email address may have a mispelled second-level domain; return a suggestion
           closestDomain = closestDomain.replace(emailParts.secondLevelDomain, closestSecondLevelDomain);
           rtrn = true;
         }
   
-        if(closestTopLevelDomain && closestTopLevelDomain != emailParts.topLevelDomain && emailParts.secondLevelDomain !== '') {
+        if(closestTopLevelDomain && closestTopLevelDomain !== emailParts.topLevelDomain && emailParts.secondLevelDomain !== '') {
           // The email address may have a mispelled top-level domain; return a suggestion
           closestDomain = closestDomain.replace(new RegExp(emailParts.topLevelDomain + "$"), closestTopLevelDomain);
           rtrn = true;
@@ -163,7 +163,7 @@ var Mailcheck = {
       var offset_arr=[];  //offset pair array, for computing the transpositions
   
       while ((c1 < l1) && (c2 < l2)) {
-          if (s1.charAt(c1) == s2.charAt(c2)) {
+          if (s1.charAt(c1) === s2.charAt(c2)) {
               local_cs++;
               var isTrans=false;
               //see if current match is a transposition
@@ -200,18 +200,18 @@ var Mailcheck = {
           } else {
               lcss+=local_cs;
               local_cs=0;
-              if (c1!=c2) {
+              if (c1!==c2) {
                   c1=c2=Math.min(c1,c2);  //using min allows the computation of transpositions
               }
               //if matching characters are found, remove 1 from both cursors (they get incremented at the end of the loop)
               //so that we can have only one code block handling matches 
               for (var j = 0; j < maxOffset && (c1+j<l1 || c2+j<l2); j++) {
-                  if ((c1 + j < l1) && (s1.charAt(c1 + j) == s2.charAt(c2))) {
+                  if ((c1 + j < l1) && (s1.charAt(c1 + j) === s2.charAt(c2))) {
                       c1+= j-1; 
                       c2--;
                       break;
                   }
-                  if ((c2 + j < l2) && (s1.charAt(c1) == s2.charAt(c2 + j))) {
+                  if ((c2 + j < l2) && (s1.charAt(c1) === s2.charAt(c2 + j))) {
                       c1--;
                       c2+= j-1;
                       break;
@@ -253,7 +253,7 @@ var Mailcheck = {
       if (domainParts.length === 0) {
         // The address does not have a top-level domain
         return false;
-      } else if (domainParts.length == 1) {
+      } else if (domainParts.length === 1) {
         // The address has only a top-level domain (valid under RFC)
         tld = domainParts[0];
       } else {
